@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [display, setDisplay] = useState("0");
+  const [formula, setFormula] = useState("");
+
   return (
     <>
       <div className="calculator">
         <div className="formula"></div>
         <div className="output" id="display">
-          0
+          {display}
         </div>
         <div className="buttons">
           <button id="ac" className="big-btn">
