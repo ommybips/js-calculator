@@ -4,12 +4,68 @@ body {
   align-items: center;
   margin: auto;
   height: 100vh;
+  font-family: Share Tech Mono, monospace;
 }
 
 .calculator {
+  background-color: black;
+  border: black 1px solid;
+  width: 320px;
+  padding: 5px;
 }
 
-.display {
-  background-color: aliceblue;
+.formula {
+  min-height: 20px;
+}
+
+.output,
+.formula {
+  background-color: inherit;
+  color: white;
+  text-align: right;
+}
+
+.buttons {
+  display: block;
+}
+
+.big-btn {
+  width: 160px;
+}
+
+button {
+  width: 80px;
+  height: 65px;
+  background-color: #4d4d4d;
+  color: white;
+  font-family: Share Tech Mono, monospace;
+  font-size: 1.5em;
+  border: black 1px solid;
+}
+
+button:hover {
+  border: grey 1px solid;
+}
+
+#equal {
+  height: 130px;
+  position: absolute;
+}
+
+#ac {
+  background-color: rgb(172, 57, 57);
+}
+
+#display {
+  font-size: 1.5em;
+}
+
+.symbols {
+  background-color: #666666;
+}
+
+#credits {
+  font-size: 1em;
   color: black;
+  text-align: center;
 }
