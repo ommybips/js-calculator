@@ -260,8 +260,17 @@ function App() {
           setDisplay("+");
           setFormula(formula.slice(0, -1) + "+");
         } else if (formula[formula.length - 1] === "-") {
-          setDisplay("+");
-          setFormula(formula.slice(0, -2) + "+");
+          if (
+            formula[formula.length - 2] === "*" ||
+            formula[formula.length - 2] === "/" ||
+            formula[formula.length - 2] === "+"
+          ) {
+            setDisplay("+");
+            setFormula(formula.slice(0, -2) + "+");
+          } else {
+            setDisplay("+");
+            setFormula(formula.slice(0, -1) + "+");
+          }
         } else {
           setDisplay("+");
           setFormula(formula + "+");
@@ -289,8 +298,17 @@ function App() {
           setDisplay("*");
           setFormula(formula.slice(0, -1) + "*");
         } else if (formula[formula.length - 1] === "-") {
-          setDisplay("*");
-          setFormula(formula.slice(0, -2) + "*");
+          if (
+            formula[formula.length - 2] === "*" ||
+            formula[formula.length - 2] === "/" ||
+            formula[formula.length - 2] === "+"
+          ) {
+            setDisplay("*");
+            setFormula(formula.slice(0, -2) + "*");
+          } else {
+            setDisplay("*");
+            setFormula(formula.slice(0, -1) + "*");
+          }
         } else {
           setDisplay("*");
           setFormula(formula + "*");
@@ -301,15 +319,23 @@ function App() {
         if (formula === "" || formula === "0") return;
         if (
           formula[formula.length - 1] === "+" ||
-          formula[formula.length - 1] === "-" ||
           formula[formula.length - 1] === "*" ||
           formula[formula.length - 1] === "/"
         ) {
           setDisplay("/");
           setFormula(formula.slice(0, -1) + "/");
         } else if (formula[formula.length - 1] === "-") {
-          setDisplay("/");
-          setFormula(formula.slice(0, -2) + "/");
+          if (
+            formula[formula.length - 2] === "*" ||
+            formula[formula.length - 2] === "/" ||
+            formula[formula.length - 2] === "+"
+          ) {
+            setDisplay("/");
+            setFormula(formula.slice(0, -2) + "/");
+          } else {
+            setDisplay("/");
+            setFormula(formula.slice(0, -1) + "/");
+          }
         } else {
           setDisplay("/");
           setFormula(formula + "/");
