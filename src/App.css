@@ -23,6 +23,7 @@ body {
   background-color: inherit;
   color: white;
   text-align: right;
+  text-overflow: ellipsis;
 }
 
 .buttons {
@@ -47,12 +48,12 @@ button:hover {
   border: grey 1px solid;
 }
 
-#equal {
+#equals {
   height: 130px;
   position: absolute;
 }
 
-#ac {
+#clear {
   background-color: rgb(172, 57, 57);
 }
 
